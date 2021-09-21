@@ -57,13 +57,16 @@ setup_render_node() {
 gpu_setup_host() {
     echo "use GPU host mode"
 
-    setprop qemu.gles.vendor mesa
+    setprop ro.hardware.egl mesa
     setprop ro.hardware.gralloc gbm
+    setprop ro.kernel.redroid.fps 30
 }
 
 gpu_setup_guest() {
     echo "use GPU guest mode"
 
+    setprop ro.hardware.egl swiftshader
+    setprop ro.hardware.gralloc redroid
     setprop ro.hardware.vulkan pastel
 }
 
