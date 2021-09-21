@@ -1,20 +1,31 @@
-include device/generic/arm64/BoardConfig.mk
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_ABI := arm64-v8a
 
-TARGET_USES_HWC2 := true
+TARGET_2ND_ARCH := arm
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_CPU_VARIANT := generic
 
-# want all fonts
-SMALLER_FONT_FOOTPRINT := false
-MINIMAL_FONT_FOOTPRINT := false
+include build/make/target/board/BoardConfigGsiCommon.mk
 
-BUILD_EMULATOR_OPENGL := false
+TARGET_NO_KERNEL := true
 
-# use seperate vendor partition
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
 TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+
+
+# ~350M
+BOARD_VENDORIMAGE_PARTITION_SIZE := 367001600
+
+# ~1.3G
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
 
 BOARD_GPU_DRIVERS := virgl radeonsi
 
 DEVICE_MANIFEST_FILE := device/redroid/manifest.xml
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
-# ~ 1.3G
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624

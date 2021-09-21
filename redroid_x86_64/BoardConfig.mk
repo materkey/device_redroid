@@ -1,15 +1,27 @@
-include device/generic/x86_64/BoardConfig.mk
+TARGET_CPU_ABI := x86_64
+TARGET_ARCH := x86_64
+TARGET_ARCH_VARIANT := x86_64
 
-TARGET_USES_HWC2 := true
+TARGET_2ND_CPU_ABI := x86
+TARGET_2ND_ARCH := x86
+TARGET_2ND_ARCH_VARIANT := x86_64
 
-# want all fonts
-SMALLER_FONT_FOOTPRINT := false
-MINIMAL_FONT_FOOTPRINT := false
+include build/make/target/board/BoardConfigGsiCommon.mk
 
-# use seperate vendor partition
+TARGET_NO_KERNEL := true
+
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
 TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+
+# ~350M
+BOARD_VENDORIMAGE_PARTITION_SIZE := 367001600
+
+# ~1.3G
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
 
 BOARD_GPU_DRIVERS := i915 i965 r300g r600g virgl iris radeonsi
 
 DEVICE_MANIFEST_FILE := device/redroid/manifest.xml
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
