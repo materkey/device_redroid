@@ -13,6 +13,7 @@
 # limitations under the License.
 
 PRODUCT_SHIPPING_API_LEVEL := 28
+PRODUCT_MANUFACTURER := redroid
 
 PRODUCT_SOONG_NAMESPACES += external/mesa3d
 
