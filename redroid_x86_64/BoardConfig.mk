@@ -23,5 +23,5 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
 
 BOARD_GPU_DRIVERS := i915 i965 r300g r600g virgl iris radeonsi
 
-DEVICE_MANIFEST_FILE := device/redroid/manifest.xml
+DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
 

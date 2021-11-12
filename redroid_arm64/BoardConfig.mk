@@ -27,5 +27,5 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
 
 BOARD_GPU_DRIVERS := virgl radeonsi
 
-DEVICE_MANIFEST_FILE := device/redroid/manifest.xml
+DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
 
